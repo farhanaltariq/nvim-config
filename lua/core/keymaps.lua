@@ -33,3 +33,6 @@ vim.keymap.set('n', '<leader><S-Tab>', ':BufferLineCyclePrev<CR>', {})
 vim.keymap.set('n', '<leader>/', function() require('Comment.api').toggle.linewise.current() end, {})
 -- Visual mode: Toggle comment on selected lines
 vim.keymap.set('v', '<leader>/', "<ESC><CMD>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>", {})
+
+-- Git shortcut
+vim.keymap.set('n', '<leader>F', "<cmd>Fugit2<cr>", {})

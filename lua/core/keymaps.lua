@@ -29,6 +29,7 @@ vim.keymap.set('n', '<S-u>', '<C-r>', {})
 vim.keymap.set('n', '<leader><Tab>', ':tabnext<CR>', {})
 vim.keymap.set('n', '<leader><S-Tab>', ':tabprev<CR>', {})
 vim.keymap.set('n', '<leader>t', ':tabnew<CR>', {})
+vim.keymap.set('n', '<leader>w', ':tabclose<CR>', {})
 
 -- Comment a line
 vim.keymap.set('n', '<leader>/', function() require('Comment.api').toggle.linewise.current() end, {})

@@ -1,0 +1,14 @@
+-- Treesitter
+return {
+  "nvim-treesitter/nvim-treesitter",
+  build = ":TSUpdate",
+  config = function()
+    -- Treesitter setup
+    require("nvim-treesitter.configs").setup({
+      ensure_installed = { "c", "go", "gomod", "lua", "vim", "vimdoc", "query", "javascript", "html" },
+      sync_install = false,
+      highlight = { enable = true },
+      indent = { enable = true },
+    })
+  end
+}

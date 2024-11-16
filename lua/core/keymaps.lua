@@ -1,0 +1,30 @@
+-- luacheck: globals vim
+-- luacheck: globals prepend
+_G.vim = vim
+vim.opt.termguicolors = true
+
+-- Set tab-related options
+vim.opt.expandtab = true
+vim.opt.tabstop = 2
+vim.opt.softtabstop = 2
+vim.opt.shiftwidth = 2
+vim.opt.number = true
+
+-- Set leader key
+vim.g.mapleader = "\\"
+
+-- Neotree Toggle
+vim.keymap.set('n', '<leader>e', ':Neotree<CR>', {})
+
+-- Exit all
+vim.keymap.set('n', '<leader>q', ':qa<CR>', {})
+
+-- Save file
+vim.keymap.set('n', '<leader>s', ':w<CR>', {})
+
+-- Redo - u for undo
+vim.keymap.set('n', '<S-u>', '<C-r>', {})
+
+-- Move around files
+vim.keymap.set('n', '<leader><Tab>', ':BufferLineCycleNext<CR>', {})
+vim.keymap.set('n', '<leader><S-Tab>', ':BufferLineCyclePrev<CR>', {})

@@ -28,3 +28,8 @@ vim.keymap.set('n', '<S-u>', '<C-r>', {})
 -- Move around files
 vim.keymap.set('n', '<leader><Tab>', ':BufferLineCycleNext<CR>', {})
 vim.keymap.set('n', '<leader><S-Tab>', ':BufferLineCyclePrev<CR>', {})
+
+-- Comment a line
+vim.keymap.set('n', '<leader>/', function() require('Comment.api').toggle.linewise.current() end, {})
+-- Visual mode: Toggle comment on selected lines
+vim.keymap.set('v', '<leader>/', "<ESC><CMD>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>", {})

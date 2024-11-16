@@ -42,3 +42,7 @@ vim.keymap.set('n', '<leader>g', '<cmd>LazyGit<cr>', {})
 -- SelectAll
 vim.keymap.set('n', '<leader>a', 'ggVG', {})
 
+-- Mapping for LSP go to definition and go to implementation
+vim.api.nvim_set_keymap('n', '<leader>[', '<cmd>lua vim.lsp.buf.definition()<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>]', '<cmd>lua vim.lsp.buf.implementation()<CR>', { noremap = true, silent = true })
+

@@ -37,7 +37,7 @@ vim.keymap.set('n', '<leader>/', function() require('Comment.api').toggle.linewi
 vim.keymap.set('v', '<leader>/', "<ESC><CMD>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>", {})
 
 -- Git shortcut
-vim.keymap.set('n', '<leader>F', '<cmd>Fugit2<cr>', {})
+vim.keymap.set('n', '<leader>g', '<cmd>LazyGit<cr>', {})
 
 -- SelectAll
 vim.keymap.set('n', '<leader>a', 'ggVG', {})

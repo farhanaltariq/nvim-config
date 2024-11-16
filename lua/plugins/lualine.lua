@@ -5,8 +5,8 @@
     config = function()
       require('lualine').setup({
         options = {
-          theme = 'gruvbox',  -- Use Gruvbox for Lualine
-          section_separators = {'', ''},
+          theme = 'nord',
+					section_separators = {'', ''},
           component_separators = {'', ''},
         },
         sections = {
@@ -22,7 +22,7 @@
           lualine_y = {'progress'},
           lualine_z = {'location'},
         },
-        extensions = {'fugitive', 'neo-tree'},
+        extensions = {'neo-tree'},
       })
     end,
   }

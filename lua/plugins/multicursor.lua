@@ -4,4 +4,3 @@ return {
     -- You can configure vim-visual-multi if needed
   end
 }
-

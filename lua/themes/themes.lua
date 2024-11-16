@@ -26,8 +26,7 @@ local themes = {
 }
 
 -- Change this value to select your preferred theme
-local selected_theme = "nightfox" -- Choose between "tender", "tokyonight", "gruvbox", 
-
+local selected_theme = "nightfox" -- Choose the name
 -- Helper function to setup plugin configurations for lazy.nvim
 local function setup_plugins()
   local plugins = {}
@@ -49,4 +48,3 @@ end
 
 -- Return the plugins configuration for lazy.nvim
 return setup_plugins()
-

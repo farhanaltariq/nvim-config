@@ -6,7 +6,7 @@
 	  cmd = { "DiffviewOpen", "DiffviewClose", "DiffviewToggleFiles", "DiffviewFileHistory" },
 	  config = function()
 	    require("diffview").setup({
-	      use_icons = false, -- Set to true if your terminal supports icons
+	      use_icons = true, -- Set to true if your terminal supports icons
 	      view = {
 	        merge_tool = {
 	          layout = "diff3_mixed",

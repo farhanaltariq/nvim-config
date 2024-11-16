@@ -36,3 +36,6 @@ vim.keymap.set('v', '<leader>/', "<ESC><CMD>lua require('Comment.api').toggle.li
 
 -- Git shortcut
 vim.keymap.set('n', '<leader>F', "<cmd>Fugit2<cr>", {})
+
+-- SelectAll
+vim.keymap.set('n', '<leader>a', "ggVG", {})

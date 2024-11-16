@@ -1,16 +1,19 @@
 -- List of available themes to install and use
 local themes = {
+-- true colors not required
   tender = {
     name = "tender",
     plugin = "jacoborus/tender.vim",
   },
-  tokyonight = {
-    name = "tokyonight",
-    plugin = "folke/tokyonight.nvim",
-  },
   gruvbox = {
     name = "gruvbox",
     plugin = "morhetz/gruvbox",
+  },
+
+-- true colors not requireq
+  tokyonight = {
+    name = "tokyonight",
+    plugin = "folke/tokyonight.nvim",
   },
 }
 

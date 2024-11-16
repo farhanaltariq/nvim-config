@@ -4,7 +4,7 @@ _G.vim = vim
 vim.opt.termguicolors = true
 
 -- Set tab-related options
-vim.opt.expandtab = true
+vim.opt.expandtab = false
 vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
 vim.opt.shiftwidth = 2
@@ -35,7 +35,12 @@ vim.keymap.set('n', '<leader>/', function() require('Comment.api').toggle.linewi
 vim.keymap.set('v', '<leader>/', "<ESC><CMD>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>", {})
 
 -- Git shortcut
-vim.keymap.set('n', '<leader>F', "<cmd>Fugit2<cr>", {})
+vim.keymap.set('n', '<leader>F', '<cmd>Fugit2<cr>', {})
 
 -- SelectAll
-vim.keymap.set('n', '<leader>a', "ggVG", {})
+vim.keymap.set('n', '<leader>a', 'ggVG', {})
+
+-- Map Leader+d to Ctrl+n (for multi-cursor selection in vim-visual-multi)
+vim.api.nvim_set_keymap("n", "<Leader>d", "<C-n>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("v", "<Leader>d", "<C-n>", { noremap = true, silent = true })
+

@@ -1,5 +1,7 @@
 return {
   "mg979/vim-visual-multi",
-  lazy = false,
+  config = function()
+    -- You can configure vim-visual-multi if needed
+  end
 }
 

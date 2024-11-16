@@ -15,10 +15,18 @@ local themes = {
     name = "tokyonight",
     plugin = "folke/tokyonight.nvim",
   },
+	nord = {
+		name = "nord",
+		plugin = 'arcticicestudio/nord-vim',
+	},
+	nightfox = {
+		name = "nightfox",
+		plugin = 'EdenEast/nightfox.nvim',
+	}
 }
 
 -- Change this value to select your preferred theme
-local selected_theme = "tokyonight" -- Choose between "tender", "tokyonight", "gruvbox"
+local selected_theme = "nightfox" -- Choose between "tender", "tokyonight", "gruvbox", 
 
 -- Helper function to setup plugin configurations for lazy.nvim
 local function setup_plugins()

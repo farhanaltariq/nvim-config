@@ -26,8 +26,9 @@ vim.keymap.set('n', '<leader>s', ':w<CR>', {})
 vim.keymap.set('n', '<S-u>', '<C-r>', {})
 
 -- Move around files
-vim.keymap.set('n', '<leader><Tab>', ':BufferLineCycleNext<CR>', {})
-vim.keymap.set('n', '<leader><S-Tab>', ':BufferLineCyclePrev<CR>', {})
+vim.keymap.set('n', '<leader><Tab>', ':tabnext<CR>', {})
+vim.keymap.set('n', '<leader><S-Tab>', ':tabprev<CR>', {})
+vim.keymap.set('n', '<leader>t', ':tabnew<CR>', {})
 
 -- Comment a line
 vim.keymap.set('n', '<leader>/', function() require('Comment.api').toggle.linewise.current() end, {})
@@ -39,8 +40,4 @@ vim.keymap.set('n', '<leader>F', '<cmd>Fugit2<cr>', {})
 
 -- SelectAll
 vim.keymap.set('n', '<leader>a', 'ggVG', {})
-
--- Map Leader+d to Ctrl+n (for multi-cursor selection in vim-visual-multi)
-vim.api.nvim_set_keymap("n", "<Leader>d", "<C-n>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("v", "<Leader>d", "<C-n>", { noremap = true, silent = true })
 

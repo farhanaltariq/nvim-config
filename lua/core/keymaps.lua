@@ -46,3 +46,8 @@ vim.keymap.set('n', '<leader>a', 'ggVG', {})
 vim.api.nvim_set_keymap('n', '<leader>[', '<cmd>lua vim.lsp.buf.definition()<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>]', '<cmd>lua vim.lsp.buf.implementation()<CR>', { noremap = true, silent = true })
 
+-- Shortcut untuk minimize (hide) dari dalam Floaterm
+vim.keymap.set("t", "<F12>", "<C-\\><C-n>:FloatermHide<CR>", { desc = "Toggle Floaterm", silent = true })
+vim.keymap.set("n", "<F12>", ":FloatermToggle<CR>", { desc = "Hide Floaterm", silent = true })
+vim.keymap.set("i", "<F12>", "<ESC>:FloatermToggle<CR>", { desc = "Hide Floaterm", silent = true })
+vim.keymap.set("x", "<F12>", "<ESC>:FloatermToggle<CR>", { desc = "Hide Floaterm", silent = true })

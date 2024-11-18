@@ -14,26 +14,26 @@ vim.opt.number = true
 vim.g.mapleader = "\\"
 
 -- Neotree Toggle
-vim.keymap.set('n', '<leader>e', ':Neotree<CR>', { desc = "Explorer" })
+vim.keymap.set('n', '<leader>e', ':Neotree<CR>', { desc = "Explorer", silent = true })
 
 -- Exit all
-vim.keymap.set('n', '<leader>q', ':qa<CR>', { desc = "Exit Nvim" })
+vim.keymap.set('n', '<leader>q', ':qa<CR>', { desc = "Exit Nvim", silent = true })
 
 -- Format and Save file
 vim.keymap.set('n', '<leader>f', function()
 	vim.lsp.buf.format({ async = true })
 end, { noremap = true, silent = true, desc = "Format File" })
 
-vim.keymap.set('n', '<leader>s', ':w<CR>', { desc = "Save File" })
+vim.keymap.set('n', '<leader>s', ':w<CR>', { desc = "Save File", silent = true })
 
 -- Redo - u for undo
 vim.keymap.set('n', '<S-u>', '<C-r>', { desc = "Redo" })
 
 -- Move around files
-vim.keymap.set('n', '<leader><Tab>', ':tabnext<CR>', { desc = "Tab Next" })
-vim.keymap.set('n', '<leader><S-Tab>', ':tabprev<CR>', { desc = "Tab Prev" })
-vim.keymap.set('n', '<leader>t', ':tabnew<CR>', { desc = "Tab New" })
-vim.keymap.set('n', '<leader>w', ':tabclose<CR>', { desc = "Tab Close" })
+vim.keymap.set('n', '<leader><Tab>', ':tabnext<CR>', { silent = true, desc = "Tab Next" })
+vim.keymap.set('n', '<leader><S-Tab>', ':tabprev<CR>', { silent = true, desc = "Tab Prev" })
+vim.keymap.set('n', '<leader>t', ':tabnew<CR>', { silent = true, desc = "Tab New" })
+vim.keymap.set('n', '<leader>w', ':tabclose<CR>', { silent = true, desc = "Tab Close" })
 
 -- Comment a line
 vim.keymap.set('n', '<leader>/', function() require('Comment.api').toggle.linewise.current() end,

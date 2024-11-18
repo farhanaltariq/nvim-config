@@ -36,7 +36,8 @@ vim.keymap.set('n', '<leader>t', ':tabnew<CR>', { desc = "Tab New" })
 vim.keymap.set('n', '<leader>w', ':tabclose<CR>', { desc = "Tab Close" })
 
 -- Comment a line
-vim.keymap.set('n', '<leader>/', function() require('Comment.api').toggle.linewise.current() end, { desc = "Comment line" })
+vim.keymap.set('n', '<leader>/', function() require('Comment.api').toggle.linewise.current() end,
+	{ desc = "Comment line" })
 -- Visual mode: Toggle comment on selected lines
 vim.keymap.set('v', '<leader>/', "<ESC><CMD>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>",
 	{ desc = "Comment line" })
@@ -48,8 +49,10 @@ vim.keymap.set('n', '<leader>g', '<cmd>LazyGit<cr>', { desc = "Git" })
 vim.keymap.set('n', '<leader>a', 'ggVG', { desc = "Select All" })
 
 -- Mapping for LSP go to definition and go to implementation
-vim.api.nvim_set_keymap('n', '<leader>[', '<cmd>lua vim.lsp.buf.definition()<CR>', { noremap = true, silent = true, desc="Go to definition" })
-vim.api.nvim_set_keymap('n', '<leader>]', '<cmd>lua vim.lsp.buf.implementation()<CR>', { noremap = true, silent = true, desc="Go to implementation" })
+vim.api.nvim_set_keymap('n', '<leader>[', '<cmd>lua vim.lsp.buf.definition()<CR>',
+	{ noremap = true, silent = true, desc = "Go to definition" })
+vim.api.nvim_set_keymap('n', '<leader>]', '<cmd>lua vim.lsp.buf.implementation()<CR>',
+	{ noremap = true, silent = true, desc = "Go to implementation" })
 
 -- Shortcut untuk minimize (hide) dari dala Terminalm
 vim.keymap.set("t", "<F10>", "<C-\\><C-n>:FloatermHide<CR>", { desc = "Toggle Terminal", silent = true })

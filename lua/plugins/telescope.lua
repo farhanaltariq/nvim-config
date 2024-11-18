@@ -16,8 +16,11 @@ return {
 		require('telescope').setup {
 			defaults = {
 				layout_config = {
-					preview_width = 0.55,     -- Adjust this value for the preview window size (larger than the search list)
+					preview_width = 0.55,  -- Adjust this value for the preview window size (larger than the search list)
 					prompt_position = "bottom", -- Optional: places the prompt at the top
+				},
+				vimgrep_arguments = {
+					'rg', '--color=never', '--no-heading', '--with-filename', '--line-number', '--column', '-F'
 				},
 			},
 		}

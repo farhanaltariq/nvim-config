@@ -24,29 +24,29 @@ local themes = {
 		plugin = 'EdenEast/nightfox.nvim',
 	},
 	onedark = {
-		name = "onedark", -- catppuccin " catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
+		name = "onedark",         -- catppuccin " catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
 		plugin = "navarasu/onedark.nvim"
 	},
 	catppuccin = {
-		name = "catppuccin-frappe", -- catppuccin " catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
+		name = "catppuccin-frappe",         -- catppuccin " catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
 		plugin = "catppuccin/nvim"
 	},
 }
 
 -- Change this value to select your preferred theme
-local selected_theme = "onedark" -- Choose the name
+local selected_theme = "onedark"           -- Choose the name
 -- Helper function to setup plugin configurations for lazy.nvim
 local function setup_plugins()
 	local plugins = {}
 	for key, theme in pairs(themes) do
 		table.insert(plugins, {
 			theme.plugin,
-			lazy = false, -- Load themes on startup
+			lazy = false,        -- Load themes on startup
 			priority = 1000,
 			config = function()
 				if key == selected_theme then
-					vim.opt.termguicolors = true          -- Enable true color support
-					vim.cmd("colorscheme " .. theme.name) -- Apply the selected theme
+					vim.opt.termguicolors = true               -- Enable true color support
+					vim.cmd("colorscheme " .. theme.name)      -- Apply the selected theme
 				end
 			end,
 		})

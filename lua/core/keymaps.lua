@@ -35,13 +35,6 @@ vim.keymap.set('n', '<leader><S-Tab>', ':tabprev<CR>', { silent = true, desc = "
 vim.keymap.set('n', '<leader>t', ':tabnew<CR>', { silent = true, desc = "Tab New" })
 vim.keymap.set('n', '<leader>w', ':tabclose<CR>', { silent = true, desc = "Tab Close" })
 
--- Comment a line
-vim.keymap.set('n', '<leader>/', function() require('Comment.api').toggle.linewise.current() end,
-	{ desc = "Comment line" })
--- Visual mode: Toggle comment on selected lines
-vim.keymap.set('v', '<leader>/', "<ESC><CMD>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>",
-	{ desc = "Comment line" })
-
 -- Git shortcut
 vim.keymap.set('n', '<leader>g', '<cmd>LazyGit<cr>', { desc = "Git" })
 

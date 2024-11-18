@@ -1,4 +1,3 @@
-vim.o.mouse = "a"
 -- Automatically load Lazy.nvim on startup
 -- luacheck: globals vim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -15,6 +14,7 @@ end
 -- Ensure Lazy.nvim is in the runtime path
 vim.opt.rtp:prepend(lazypath)
 
+require("core.disabled")
 require("core.keymaps")
 require("lazy").setup({
 	{ import = "plugins" },

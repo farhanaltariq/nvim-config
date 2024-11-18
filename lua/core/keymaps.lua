@@ -55,9 +55,12 @@ vim.api.nvim_set_keymap('n', '<leader>]', '<cmd>lua vim.lsp.buf.implementation()
 	{ noremap = true, silent = true, desc = "Go to implementation" })
 
 -- Shortcut untuk minimize (hide) dari dala Terminalm
-vim.keymap.set("t", "<F10>", "<C-\\><C-n>:FloatermHide<CR>", { desc = "Toggle Terminal", silent = true })
-vim.keymap.set("n", "<F10>", ":FloatermToggle<CR>", { desc = "Hide Terminal", silent = true })
-vim.keymap.set("i", "<F10>", "<ESC>:FloatermToggle<CR>", { desc = "Hide Terminal", silent = true })
-vim.keymap.set("x", "<F10>", "<ESC>:FloatermToggle<CR>", { desc = "Hide Terminal", silent = true })
+vim.keymap.set("t", "<F2>", "<C-\\><C-n>:FloatermHide<CR>", { desc = "Toggle Terminal", silent = true })
+vim.keymap.set("n", "<F2>", ":FloatermToggle<CR>", { desc = "Hide Terminal", silent = true })
+vim.keymap.set("i", "<F2>", "<ESC>:FloatermToggle<CR>", { desc = "Hide Terminal", silent = true })
+vim.keymap.set("x", "<F2>", "<ESC>:FloatermToggle<CR>", { desc = "Hide Terminal", silent = true })
 
-vim.keymap.set("t", "<F9>", "<C-\\><C-n>:FloatermNext<CR>", { desc = "Change Terminal", silent = true })
+vim.keymap.set("t", "<F3>", "<C-\\><C-n>:FloatermNext<CR>", { desc = "Change Terminal", silent = true })
+
+vim.keymap.set("t", "<F4>", "<C-\\><C-n>:FloatermNew<CR>", { desc = "New Terminal", silent = true })
+vim.keymap.set("n", "<F4>", ":FloatermNew<CR>", { desc = "New Terminal", silent = true })

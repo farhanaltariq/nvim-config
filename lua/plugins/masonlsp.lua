@@ -28,8 +28,8 @@ return {
 				end
 
 				-- Rename keymap
-				buf_set_keymap('n', '<leader>r', '<cmd>lua vim.lsp.buf.rename()<CR>', 'LSP Rename')
-				buf_set_keymap('v', '<leader>r', '<cmd>lua vim.lsp.buf.rename()<CR>', 'LSP Rename')
+				buf_set_keymap('n', '<leader>r', '<cmd>lua vim.lsp.buf.rename()<CR>', 'Refactor')
+				buf_set_keymap('v', '<leader>r', '<cmd>lua vim.lsp.buf.rename()<CR>', 'Refactor')
 			end
 
 			-- Lua LSP setup

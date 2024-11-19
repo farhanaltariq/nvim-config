@@ -10,7 +10,7 @@ return {
 				enabled = true,                 -- Enable the cmdline UI
 				view = "cmdline_popup",         -- Use the floating UI for command input
 				format = {
-					cmdline = { pattern = "^:", icon = "[cmd]", lang = "vim" },
+					cmdline = { pattern = "^:", icon = "$", lang = "vim" },
 				},
 			},
 			popupmenu = {

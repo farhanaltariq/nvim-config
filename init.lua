@@ -21,3 +21,4 @@ require("lazy").setup({
 	{ import = "git" },
 	{ import = "themes" },
 })
+require("current-theme")

@@ -4,15 +4,19 @@ return {
 	dependencies = {
 		'nvim-lua/plenary.nvim',
 		{ 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
+		'andrew-george/telescope-themes',
 	},
 	config = function()
-		local telescope = require("telescope.builtin")
+		local telescope = require("telescope")
+		local telescopeBuiltin = require("telescope.builtin")
 		local wk = require("which-key")
-		require('telescope').load_extension('fzf')
+		telescope.load_extension('fzf')
+		telescope.load_extension('themes')
 		-- Register keymaps for Telescope
 		wk.add({
-			{ '<leader>p', function() telescope.find_files({ hidden = true, no_ignore = true }) end,  group = 'Find Files' },
-			{ '<leader>F', function() telescope.live_grep({ hidden = false, no_ignore = false }) end, group = 'Find Everywhere' },
+			{ '<leader>p', function() telescopeBuiltin.find_files({ hidden = true, no_ignore = true }) end,  group = 'Find Files' },
+			{ '<leader>F', function() telescopeBuiltin.live_grep({ hidden = false, no_ignore = false }) end, group = 'Find Everywhere' },
+			{ "<leader>th", ":Telescope themes<CR>", {noremap = true, silent = true, desc = "Theme Switcher"} },
 		})
 
 		-- Configure Telescope to make preview window larger

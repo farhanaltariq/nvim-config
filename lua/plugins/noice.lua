@@ -24,20 +24,6 @@ return {
 				inc_rename = true,                    -- Better input UI for incremental renaming
 				lsp_doc_border = true,                -- Add borders to LSP documentation windows
 			},
-			views = {
-				-- Configuration for notifications at the bottom right corner
-				notify = {
-					position = {
-						row = "95%",               -- 95% down from the top (bottom edge)
-						col = "98%",               -- 98% to the right (near the right edge)
-						anchor = "SE",             -- South-East anchor (bottom-right corner)
-					},
-					size = {
-						width = 40,                  -- Fixed width for notifications
-						height = "auto",             -- Auto height based on content
-					},
-				},
-			},
 		})
 
 		-- Additional configuration for `nvim-notify` to ensure it works well with Noice

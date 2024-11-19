@@ -16,7 +16,7 @@ return {
 		wk.add({
 			{ '<leader>p', function() telescopeBuiltin.find_files({ hidden = true, no_ignore = true }) end,  group = 'Find Files' },
 			{ '<leader>F', function() telescopeBuiltin.live_grep({ hidden = false, no_ignore = false }) end, group = 'Find Everywhere' },
-			{ "<leader>th", ":Telescope themes<CR>", {noremap = true, silent = true, desc = "Theme Switcher"} },
+			{ "<leader>kt", ":Telescope themes<CR>", {noremap = true, silent = true, desc = "Theme Switcher"} },
 		})
 
 		-- Configure Telescope to make preview window larger

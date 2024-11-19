@@ -20,11 +20,27 @@ return {
 		-- LSP setup
 		config = function()
 			local lspconfig = require('lspconfig')
+
+			-- Keymap function for convenience
+			local on_attach = function(client, bufnr)
+				local function buf_set_keymap(mode, lhs, rhs, desc)
+					vim.api.nvim_buf_set_keymap(bufnr, mode, lhs, rhs, { noremap = true, silent = true, desc = desc })
+				end
+
+				-- Rename keymap
+				buf_set_keymap('n', '<leader>r', '<cmd>lua vim.lsp.buf.rename()<CR>', 'LSP Rename')
+				buf_set_keymap('v', '<leader>r', '<cmd>lua vim.lsp.buf.rename()<CR>', 'LSP Rename')
+			end
+
 			-- Lua LSP setup
-			lspconfig.lua_ls.setup({})
+			lspconfig.lua_ls.setup({
+				on_attach = on_attach,
+			})
+
 			-- Go LSP setup with formatting
 			lspconfig.gopls.setup({
 				on_attach = function(client, bufnr)
+					on_attach(client, bufnr)
 					-- Enable formatting with gofmt
 					if client.server_capabilities.documentFormattingProvider then
 						vim.api.nvim_create_autocmd("BufWritePre", {
@@ -50,5 +66,5 @@ return {
 				},
 			})
 		end,
-	}
+	},
 }

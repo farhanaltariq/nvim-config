@@ -57,3 +57,10 @@ vim.keymap.set("t", "<F3>", "<C-\\><C-n>:FloatermNext<CR>", { desc = "Change Ter
 
 vim.keymap.set("t", "<F4>", "<C-\\><C-n>:FloatermNew<CR>", { desc = "New Terminal", silent = true })
 vim.keymap.set("n", "<F4>", ":FloatermNew<CR>", { desc = "New Terminal", silent = true })
+local keymaps = {
+	{ "<leader>v", ":Telescope neoclip<CR>", desc = "Clipboard Manager", group = "Telescope" },
+}
+
+for _, map in ipairs(keymaps) do
+	vim.keymap.set("n", map[1], map[2], { desc = map.desc })
+end

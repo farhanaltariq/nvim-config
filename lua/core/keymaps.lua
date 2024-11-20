@@ -64,3 +64,5 @@ local keymaps = {
 for _, map in ipairs(keymaps) do
 	vim.keymap.set("n", map[1], map[2], { desc = map.desc })
 end
+
+vim.keymap.set('n', '<leader>db', '<cmd>DBUI<cr>', { desc = "Database Manager" })

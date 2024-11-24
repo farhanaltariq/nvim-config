@@ -9,6 +9,7 @@ return {
 		"hrsh7th/cmp-vsnip",
 		"hrsh7th/vim-vsnip",
 		"onsails/lspkind-nvim", -- For icons in completion menu
+		"williamboman/mason.nvim"
 	},
 	config = function()
 		local cmp = require 'cmp'
@@ -22,9 +23,9 @@ return {
 			},
 			mapping = cmp.mapping.preset.insert({
 				['<CR>'] = cmp.mapping.confirm({ select = true }), -- Confirm selection with Enter
-				['<C-Space>'] = cmp.mapping.complete(),        -- Trigger completion with Ctrl+Space
-				['<Tab>'] = cmp.mapping.select_next_item(),    -- Navigate forward
-				['<S-Tab>'] = cmp.mapping.select_prev_item(),  -- Navigate backward
+				['<C-e>'] = cmp.mapping.complete(),        -- Trigger completion with Ctrl+Space
+				-- ['<Tab>'] = cmp.mapping.select_next_item(),    -- Navigate forward
+				-- ['<S-Tab>'] = cmp.mapping.select_prev_item(),  -- Navigate backward
 			}),
 			sources = {
 				{ name = 'nvim_lsp' }, -- Language Server Protocol
@@ -35,9 +36,9 @@ return {
 				format = lspkind.cmp_format({
 					mode = "symbol_text", -- Show icons with text
 					menu = {
-						buffer = "[Buffer]",
-						path = "[Path]",
-						nvim_lsp = "[LSP]",
+						-- buffer = "[Buffer]",
+						-- path = "[Path]",
+						-- nvim_lsp = "[LSP]",
 					},
 				}),
 			},
@@ -61,4 +62,3 @@ return {
 		})
 	end
 }
-

@@ -37,7 +37,7 @@ return {
 					fuzzy = true,              -- Enable fuzzy matching
 					override_generic_sorter = true, -- Use fzf as the generic sorter
 					override_file_sorter = true, -- Use fzf as the file sorter
-					case_mode = "smart_case",  -- Or "ignore_case", "respect_case"
+					case_mode = "smart_case",  -- "smart_case", Or "ignore_case", "respect_case"
 				},
 			},
 		}

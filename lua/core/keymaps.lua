@@ -1,6 +1,5 @@
 -- luacheck: globals vim
 -- luacheck: globals prepend
-_G.vim = vim
 vim.opt.termguicolors = true
 
 -- Set tab-related options

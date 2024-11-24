@@ -2,6 +2,7 @@ local tabnine = {
 	-- TabNine Plugin
 	{
 		"codota/tabnine-nvim",
+		event = 'VeryLazy',
 		build = "./dl_binaries.sh",
 		config = function()
 			require("tabnine").setup({

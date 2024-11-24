@@ -1,6 +1,7 @@
 -- Lualine (Status Line)
 return {
 	'nvim-lualine/lualine.nvim',
+	event = 'VeryLazy',
 	dependencies = { 'nvim-tree/nvim-web-devicons', "codota/tabnine-nvim" },
 	config = function()
 		local tabnine = require("tabnine.status")

@@ -1,6 +1,7 @@
 -- nvim-cmp (Completion)
 return {
 	"hrsh7th/nvim-cmp",
+	event = "BufReadPre",
 	dependencies = {
 		"hrsh7th/cmp-cmdline",
 		"hrsh7th/cmp-nvim-lsp",
@@ -23,7 +24,7 @@ return {
 			},
 			mapping = cmp.mapping.preset.insert({
 				['<CR>'] = cmp.mapping.confirm({ select = true }), -- Confirm selection with Enter
-				['<C-e>'] = cmp.mapping.complete(),        -- Trigger completion with Ctrl+Space
+				['<C-e>'] = cmp.mapping.complete(),            -- Trigger completion with Ctrl+e
 				-- ['<Tab>'] = cmp.mapping.select_next_item(),    -- Navigate forward
 				-- ['<S-Tab>'] = cmp.mapping.select_prev_item(),  -- Navigate backward
 			}),

@@ -1,5 +1,11 @@
 -- Devicons
 return {
-	{ "kyazdani42/nvim-web-devicons" },
-	{ "echasnovski/mini.icons" },
+	{
+		"kyazdani42/nvim-web-devicons",
+		event = "VeryLazy",
+	},
+	{
+		"echasnovski/mini.icons",
+		event = "VeryLazy",
+	},
 }

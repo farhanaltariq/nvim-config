@@ -1,6 +1,7 @@
 return {
 	{
 		"atiladefreitas/lazyclip",
+		event = 'VeryLazy',
 		config = function()
 			require("lazyclip").setup()
 		end,

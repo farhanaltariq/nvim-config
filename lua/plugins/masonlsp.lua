@@ -39,6 +39,16 @@ return {
 
 			-- Go LSP setup with formatting
 			lspconfig.gopls.setup({
+				settings = {
+					gopls = {
+						staticcheck = true, -- enables linting and more advanced checks
+						analyses = {
+							unusedparams = true, -- enable specific linting rules
+							shadow = true,
+							format = true, -- Make sure format-related checks are enabled
+						},
+					},
+				},
 				on_attach = function(client, bufnr)
 					on_attach(client, bufnr)
 					-- Enable formatting with gofmt
@@ -54,8 +64,8 @@ return {
 					-- Disable default LSP diagnostics to allow tiny-inline-diagnostic to handle them
 					vim.diagnostic.config({
 						virtual_text = false, -- Disable inline diagnostic messages
-						signs = true,      -- Disable diagnostic signs in the sign column
-						underline = true,  -- Disable underlining of errors
+						signs = true,       -- Disable diagnostic signs in the sign column
+						underline = true,   -- Disable underlining of errors
 						update_in_insert = false, -- Disable updates to diagnostics in insert mode
 					})
 				end,

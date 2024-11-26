@@ -13,7 +13,7 @@ vim.opt.number = true
 vim.g.mapleader = "\\"
 
 -- Neotree Toggle
-vim.keymap.set('n', '<leader>e', ':Neotree<CR>', { desc = "Explorer", silent = true })
+vim.keymap.set('n', '<leader>e', ':Neotree reveal<CR>', { desc = "Explorer", silent = true })
 
 -- Exit all
 vim.keymap.set('n', '<leader>q', ':qa<CR>', { desc = "Exit Nvim", silent = true })
@@ -46,7 +46,7 @@ vim.api.nvim_set_keymap('n', '<leader>[', '<cmd>lua vim.lsp.buf.definition()<CR>
 vim.api.nvim_set_keymap('n', '<leader>]', '<cmd>lua vim.lsp.buf.implementation()<CR>',
 	{ noremap = true, silent = true, desc = "Go to implementation" })
 
--- Shortcut untuk minimize (hide) dari dala Terminalm
+-- -- Shortcut untuk minimize (hide) dari dala Terminalm
 vim.keymap.set("t", "<F2>", "<C-\\><C-n>:FloatermHide<CR>", { desc = "Toggle Terminal", silent = true })
 vim.keymap.set("n", "<F2>", ":FloatermToggle<CR>", { desc = "Hide Terminal", silent = true })
 vim.keymap.set("i", "<F2>", "<ESC>:FloatermToggle<CR>", { desc = "Hide Terminal", silent = true })
@@ -65,4 +65,3 @@ for _, map in ipairs(keymaps) do
 end
 
 vim.keymap.set('n', '<leader>db', '<cmd>tabnew | DBUI<cr>', { desc = "Database Manager" })
-

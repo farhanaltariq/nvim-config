@@ -17,6 +17,7 @@ return {
 					visible = true,     -- Show hidden files
 					hide_dotfiles = false, -- Don't hide dotfiles
 					hide_gitignored = false, -- Optionally, show git-ignored files too
+					never_show = { ".git" } -- explicitly hides the .git folder
 				},
 				window = {
 					position = "right", -- You can adjust the position

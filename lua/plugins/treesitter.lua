@@ -11,5 +11,9 @@ return {
 			highlight = { enable = true },
 			indent = { enable = true },
 		})
+		vim.wo.foldmethod = 'expr'
+		vim.wo.foldexpr = 'nvim_treesitter#foldexpr()'
+		-- Disable automatic folding when opening the buffer
+		vim.cmd('setlocal foldlevel=99') -- This will make sure folds are not collapsed on open
 	end
 }

@@ -18,9 +18,9 @@ vim.opt.runtimepath:prepend(lazypath)
 require("core.disabled")
 require("core.keymaps")
 require("lazy").setup({
+	{ import = "themes" },
 	{ import = "plugins" },
 	{ import = "git" },
-	{ import = "themes" },
 })
 require("current-theme")
 

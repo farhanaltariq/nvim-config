@@ -10,4 +10,5 @@ return {
 	"bluz71/vim-nightfly-colors",
 	"NLKNguyen/papercolor-theme",
 	"dracula/vim",
+	"scottmckendry/cyberdream.nvim",
 }

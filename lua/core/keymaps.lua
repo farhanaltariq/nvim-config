@@ -35,7 +35,7 @@ vim.keymap.set('n', '<leader>t', ':tabnew<CR>', { silent = true, desc = "Tab New
 vim.keymap.set('n', '<leader>w', ':tabclose<CR>', { silent = true, desc = "Tab Close" })
 
 -- Git shortcut
-vim.keymap.set('n', '<leader>g', '<cmd>LazyGit<cr>', { desc = "Git" })
+vim.keymap.set('n', '<leader>g', '<cmd>Neogit<cr>', { desc = "Git" })
 
 -- SelectAll
 vim.keymap.set('n', '<leader>a', 'ggVG', { desc = "Select All" })

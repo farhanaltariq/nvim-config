@@ -34,3 +34,4 @@ vim.api.nvim_create_autocmd("FileType", {
 -- vim.opt.number = true        -- Show absolute line number for the current line
 vim.opt.relativenumber = true -- Show relative line numbers for other lines
 -- require('lazy').setup({ performance = { cache = { enabled = true } } })
+vim.opt.foldcolumn = "1"

@@ -26,7 +26,7 @@ return {
 
 		-- Configure gitsigns
 		require("gitsigns").setup({
-			current_line_blame = false, -- Always show blame for the current line if true
+			current_line_blame = true, -- Always show blame for the current line if true
 			current_line_blame_opts = {
 				delay = 0,            -- No delay for displaying blame
 				virt_text_pos = "eol", -- Show blame at the end of the line

@@ -1,19 +1,20 @@
 return {
 	"rachartier/tiny-inline-diagnostic.nvim",
-	event = "VeryLazy",   -- Or `LspAttach`
-	priority = 1000,      -- needs to be loaded in first
+	event = "VeryLazy", -- Or `LspAttach`
+	priority = 1000,   -- needs to be loaded in first
 	config = function()
 		-- Default configuration
 		require("tiny-inline-diagnostic").setup({
-			signs = {
-				left = "",
-				right = "",
-				diag = "●",
-				arrow = "    ",
-				up_arrow = "    ",
-				vertical = " │",
-				vertical_end = " └",
-			},
+			preset = "ghost", -- Can be: "modern", "classic", "minimal", "powerline", ghost", "simple", "nonerdfont", "amongus"
+			-- signs = {
+			-- 	left = "",
+			-- 	right = "",
+			-- 	diag = "●",
+			-- 	arrow = "    ",
+			-- 	up_arrow = "    ",
+			-- 	vertical = " │",
+			-- 	vertical_end = " └",
+			-- },
 			hi = {
 				error = "DiagnosticError",
 				warn = "DiagnosticWarn",

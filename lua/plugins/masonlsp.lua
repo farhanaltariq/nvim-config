@@ -22,7 +22,13 @@ return {
 			local lspconfig = require('lspconfig')
 
 			-- Keymap function for convenience
-			local on_attach = function(client, bufnr)
+			local on_attach = function(_, bufnr)
+				vim.api.nvim_create_autocmd("BufWritePre", {
+					-- buffer = bufnr,
+					callback = function()
+						vim.lsp.buf.format({ async = false })
+					end,
+				})
 				local function buf_set_keymap(mode, lhs, rhs, desc)
 					vim.api.nvim_buf_set_keymap(bufnr, mode, lhs, rhs, { noremap = true, silent = true, desc = desc })
 				end
@@ -47,20 +53,16 @@ return {
 							shadow = true,
 							format = true, -- Make sure format-related checks are enabled
 						},
+						gofumpt = true, -- Use gofumpt for stricter formatting
+						hints = {
+							assignVariableTypes = true,
+							compositeLiteralFields = true,
+							constantValues = true,
+							parameterNames = true,
+						},
 					},
 				},
-				on_attach = function(client, bufnr)
-					on_attach(client, bufnr)
-					-- Enable formatting with gofmt
-					if client.server_capabilities.documentFormattingProvider then
-						vim.api.nvim_create_autocmd("BufWritePre", {
-							buffer = bufnr,
-							callback = function()
-								vim.cmd("silent! GoFmt")
-							end,
-						})
-					end
-
+				on_attach = function(_, _)
 					-- Disable default LSP diagnostics to allow tiny-inline-diagnostic to handle them
 					vim.diagnostic.config({
 						virtual_text = false, -- Disable inline diagnostic messages

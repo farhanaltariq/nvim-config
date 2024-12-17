@@ -72,6 +72,9 @@ return {
 					})
 				end,
 			})
+
+			-- Rust LSP setup
+			lspconfig.rust_analyzer.setup({})
 		end,
 	},
 	{

@@ -74,7 +74,17 @@ return {
 			})
 
 			-- Rust LSP setup
-			lspconfig.rust_analyzer.setup({})
+			lspconfig.rust_analyzer.setup({
+				on_attach = function(_, _)
+					-- Disable default LSP diagnostics to allow tiny-inline-diagnostic to handle them
+					vim.diagnostic.config({
+						virtual_text = false, -- Disable inline diagnostic messages
+						signs = true,       -- Disable diagnostic signs in the sign column
+						underline = true,   -- Disable underlining of errors
+						update_in_insert = false, -- Disable updates to diagnostics in insert mode
+					})
+				end,
+			})
 		end,
 	},
 	{

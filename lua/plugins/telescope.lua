@@ -15,16 +15,19 @@ return {
 		telescope.load_extension('themes')
 		-- Register keymaps for Telescope
 		wk.add({
-			{ '<leader>p', function() telescopeBuiltin.find_files({ hidden = true, no_ignore = true }) end,  group = 'Find Files' },
-			{ '<leader>F', function() telescopeBuiltin.live_grep({ hidden = false, no_ignore = false }) end, group = 'Find Everywhere' },
-			{ "<leader>kt", ":Telescope themes<CR>", {noremap = true, silent = true, desc = "Theme Switcher"} },
+			{ '<leader>p',  function() telescopeBuiltin.find_files({ hidden = true, no_ignore = true }) end,  group = 'Find Files' },
+			{ '<leader>F',  function() telescopeBuiltin.live_grep({ hidden = false, no_ignore = false }) end, group = 'Find Everywhere' },
+			{ "<leader>kt", function() telescope.extensions.themes.themes() end,                              group = 'Theme Switcher' },
 		})
 
 		-- Configure Telescope to make preview window larger
-		require('telescope').setup {
+		telescope.setup {
 			defaults = {
+				layout_strategy = "horizontal", -- Set default layout strategy to horizontal
 				layout_config = {
-					preview_width = 0.55, -- Adjust this value for the preview window size (larger than the search list)
+					horizontal = {
+						preview_width = 0.55, -- Adjust preview width only for horizontal layout
+					},
 					prompt_position = "top", -- Optional: places the prompt at the top
 					mirror = false,
 				},

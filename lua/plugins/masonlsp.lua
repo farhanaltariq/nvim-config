@@ -22,20 +22,13 @@ return {
 			local lspconfig = require('lspconfig')
 
 			-- Keymap function for convenience
-			local on_attach = function(_, bufnr)
+			local on_attach = function(_, _)
 				vim.api.nvim_create_autocmd("BufWritePre", {
 					-- buffer = bufnr,
 					callback = function()
 						vim.lsp.buf.format({ async = false })
 					end,
 				})
-				local function buf_set_keymap(mode, lhs, rhs, desc)
-					vim.api.nvim_buf_set_keymap(bufnr, mode, lhs, rhs, { noremap = true, silent = true, desc = desc })
-				end
-
-				-- Rename keymap
-				buf_set_keymap('n', '<leader>r', '<cmd>lua vim.lsp.buf.rename()<CR>', 'Refactor')
-				buf_set_keymap('v', '<leader>r', '<cmd>lua vim.lsp.buf.rename()<CR>', 'Refactor')
 			end
 
 			-- Lua LSP setup

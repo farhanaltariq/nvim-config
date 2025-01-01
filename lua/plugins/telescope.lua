@@ -9,16 +9,6 @@ return {
 	},
 	config = function()
 		local telescope = require("telescope")
-		local telescopeBuiltin = require("telescope.builtin")
-		local wk = require("which-key")
-		telescope.load_extension('fzf')
-		telescope.load_extension('themes')
-		-- Register keymaps for Telescope
-		wk.add({
-			{ '<leader>p',  function() telescopeBuiltin.find_files({ hidden = true, no_ignore = true }) end,  group = 'Find Files' },
-			{ '<leader>F',  function() telescopeBuiltin.live_grep({ hidden = false, no_ignore = false }) end, group = 'Find Everywhere' },
-			{ "<leader>kt", function() telescope.extensions.themes.themes() end,                              group = 'Theme Switcher' },
-		})
 
 		-- Configure Telescope to make preview window larger
 		telescope.setup {

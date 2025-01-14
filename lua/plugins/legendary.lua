@@ -54,6 +54,7 @@ return {
 
 				-- Clipboard Manager
 				{ '<leader>v',       ':Telescope neoclip<CR>',                                                                     description = 'Clipboard Manager',                            mode = 'n' },
+				{ '<leader>v',       ':Telescope neoclip<CR>',                                                                     description = 'Clipboard Manager',                            mode = 'v' },
 
 				-- Database Manager
 				{ '<leader>db',      '<cmd>tabnew | DBUI<cr>',                                                                     description = 'Database Manager',                             mode = 'n' },

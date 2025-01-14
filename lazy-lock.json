@@ -48,6 +48,7 @@
   "telescope-themes": { "branch": "main", "commit": "9b7c368b83b82b53c0a6e9e977f8329e5f1fe269" },
   "telescope.nvim": { "branch": "master", "commit": "a0bbec21143c7bc5f8bb02e0005fa0b982edc026" },
   "tender.vim": { "branch": "master", "commit": "a5b769250d5c62b6a794d5cd397998699278be57" },
+  "tiny-glimmer.nvim": { "branch": "main", "commit": "2270d138f7fbf72bb9117158e2e3041d39ce55e3" },
   "tiny-inline-diagnostic.nvim": { "branch": "main", "commit": "35d46e3804c9211f2e9860e8eff5e7d0905b8254" },
   "tokyonight.nvim": { "branch": "main", "commit": "45d22cf0e1b93476d3b6d362d720412b3d34465c" },
   "trouble.nvim": { "branch": "main", "commit": "46cf952fc115f4c2b98d4e208ed1e2dce08c9bf6" },
@@ -59,6 +60,5 @@
   "vim-nightfly-colors": { "branch": "master", "commit": "52519368c21296ad8913d71bdab33252755ba341" },
   "vim-startuptime": { "branch": "master", "commit": "ac2cccb5be617672add1f4f3c0a55ce99ba34e01" },
   "vim-visual-multi": { "branch": "master", "commit": "a6975e7c1ee157615bbc80fc25e4392f71c344d4" },
-  "vim-vsnip": { "branch": "master", "commit": "02a8e79295c9733434aab4e0e2b8c4b7cea9f3a9" },
-  "which-key.nvim": { "branch": "main", "commit": "8ab96b38a2530eacba5be717f52e04601eb59326" }
+  "vim-vsnip": { "branch": "master", "commit": "02a8e79295c9733434aab4e0e2b8c4b7cea9f3a9" }
 }

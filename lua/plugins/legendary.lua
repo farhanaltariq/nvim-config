@@ -75,6 +75,32 @@ return {
 				{ '<leader>cl',      '<cmd>Trouble lsp toggle focus=false win.position=right<cr>',                                 description = 'LSP Definitions / references / ... (Trouble)', mode = 'n' },
 				{ '<leader>xL',      '<cmd>Trouble loclist toggle<cr>',                                                            description = 'Location List (Trouble)',                      mode = 'n' },
 				{ '<leader>xQ',      '<cmd>Trouble qflist toggle<cr>',                                                             description = 'Quickfix List (Trouble)',                      mode = 'n' },
+
+				-- DAP Keymaps
+				{ '<F5>',            function() require('dap').continue() end,                                                     description = "Continue Debugging",                           mode = 'n' },
+				{ '<F10>',           function() require('dap').step_over() end,                                                    description = "Step Over",                                    mode = 'n' },
+				{ '<F11>',           function() require('dap').step_into() end,                                                    description = "Step Into",                                    mode = 'n' },
+				{ '<F12>',           function() require('dap').step_out() end,                                                     description = "Step Out",                                     mode = 'n' },
+				{ '<M-b>',           function() require('dap').toggle_breakpoint() end,                                            description = "Toggle Breakpoint",                            mode = 'n' },
+				{ '<M-e>',           function() require('dapui').eval() end,                                                       description = "Evaluate Expression",                          mode = { 'n', 'v' } },
+				{ '<M-w>',           function() require('dapui').elements.watches.add() end,                                       description = "Add Watch",                                    mode = 'n' },
+				{ '<M-W>',           function() require('dapui').elements.watches.remove() end,                                    description = "Remove Watch",                                 mode = 'n' },
+
+			},
+			commands = {
+				{
+					itemgroup = "DAP",
+					description = "Debug Adapter Protocol commands",
+					commands = {
+						{
+							":DapCloseUI",
+							function()
+								require("dapui").close()
+							end,
+							description = "Close Dap UI",
+						},
+					},
+				},
 			},
 		})
 	end

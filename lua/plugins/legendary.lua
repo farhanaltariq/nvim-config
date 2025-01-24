@@ -8,6 +8,7 @@ return {
 	-- dependencies = { 'kkharji/sqlite.lua' }
 	config = function()
 		local legendary = require('legendary')
+		local hop = require('hop')
 
 		legendary.setup({
 			keymaps = {
@@ -41,7 +42,6 @@ return {
 				{ '<leader>]',       '<cmd>lua vim.lsp.buf.implementation()<CR>',                                                  description = 'Go to implementation',                         mode = 'n' },
 				{ '<leader>r',       '<cmd>lua vim.lsp.buf.rename()<CR>',                                                          description = 'Refactor',                                     mode = 'n' },
 				{ '<leader>r',       '<cmd>lua vim.lsp.buf.rename()<CR>',                                                          description = 'Refactor',                                     mode = 'v' },
-
 
 				-- Terminal Management
 				{ '<F2>',            '<C-\\><C-n>:FloatermHide<CR>',                                                               description = 'Toggle Terminal',                              mode = 't' },
@@ -86,6 +86,9 @@ return {
 				{ '<M-w>',           function() require('dapui').elements.watches.add() end,                                       description = "Add Watch",                                    mode = 'n' },
 				{ '<M-W>',           function() require('dapui').elements.watches.remove() end,                                    description = "Remove Watch",                                 mode = 'n' },
 
+				-- Hop Keymaps
+				{ 'f',               function() hop.hint_words() end,                                                              description = "Hop: Hint char",                               mode = '' },
+				{ 'F',               function() hop.hint_words() end,                                                              description = "Hop: Hint char",                               mode = '' },
 			},
 			commands = {
 				{

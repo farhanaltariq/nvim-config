@@ -56,10 +56,6 @@ return {
 				{ '<leader>v',       ':Telescope neoclip<CR>',                                                                     description = 'Clipboard Manager',                            mode = 'n' },
 				{ '<leader>v',       ':Telescope neoclip<CR>',                                                                     description = 'Clipboard Manager',                            mode = 'v' },
 
-				-- Database Manager
-				{ '<leader>db',      '<cmd>tabnew | DBUI<cr>',                                                                     description = 'Database Manager',                             mode = 'n' },
-
-				-- Telescope Keymaps
 				{ '<leader>p',       function() require('telescope.builtin').find_files({ hidden = true, no_ignore = true }) end,  description = 'Find Files',                                   mode = 'n' },
 				{ '<leader>F',       function() require('telescope.builtin').live_grep({ hidden = false, no_ignore = false }) end, description = 'Find Everywhere',                              mode = 'n' },
 				{ '<leader>kt',      function() require('telescope').extensions.themes.themes({}) end,                             description = 'Theme Switcher',                               mode = 'n' },

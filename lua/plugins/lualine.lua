@@ -2,9 +2,8 @@
 return {
 	'nvim-lualine/lualine.nvim',
 	event = 'VeryLazy',
-	dependencies = { 'nvim-tree/nvim-web-devicons', "codota/tabnine-nvim" },
+	dependencies = { 'nvim-tree/nvim-web-devicons', },
 	config = function()
-		local tabnine = require("tabnine.status")
 		require('lualine').setup({
 			options = {
 				theme = 'OceanicNext',
@@ -37,9 +36,6 @@ return {
 					'encoding',
 					'fileformat',
 					'filetype',
-					function()
-						return tabnine.status()
-					end,
 				},
 				lualine_y = { 'progress' },
 				lualine_z = { 'location' },

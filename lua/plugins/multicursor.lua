@@ -1,6 +1,6 @@
 return {
 	"mg979/vim-visual-multi",
-	lazy = false,                   -- Force immediate load for testing
+	event = 'VeryLazy',
 	init = function()
 		vim.g.VM_default_mappings = 0 -- Disable ALL defaults
 		vim.g.VM_maps = {

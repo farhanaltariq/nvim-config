@@ -78,6 +78,12 @@ return {
 					})
 				end,
 			})
+
+			-- ProtoBuf LSP (pbls)
+			lspconfig.pbls.setup({
+				on_attach = on_attach,
+				-- Add settings here if needed
+			})
 		end,
 	},
 	{
@@ -88,8 +94,18 @@ return {
 			-- Configure gofmt with null-ls
 			null_ls.setup({
 				sources = {
+					-- Go formatter
 					null_ls.builtins.formatting.gofmt,
-				},
+
+					-- ProtoBuf linter
+					null_ls.builtins.diagnostics.buf.with({
+						filetypes = { "proto" },
+					}),
+
+					-- ProtoBuf formatter
+					null_ls.builtins.formatting.buf.with({
+						filetypes = { "proto" },
+					}), },
 			})
 		end,
 	},

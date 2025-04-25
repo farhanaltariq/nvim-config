@@ -9,36 +9,43 @@ return {
 	config = function()
 		local legendary = require('legendary')
 		local hop = require('hop')
+		local json = require('json-nvim')
 
 		legendary.setup({
 			keymaps = {
+				-- Json formatter
+				{ '',                json.format,                                         description = 'Format JSON',                group = 'JSON' },
+				{ '',                json.minify,                                         description = 'Minify JSON',                group = 'JSON' },
+				{ '',                json.convert_keys,                                   description = 'Convert Keys (toggle case)', group = 'JSON' },
+				{ '',                json.convert_keys,                                   description = 'Convert Keys (toggle case)', group = 'JSON' },
+
 				-- Explorer
-				{ '<leader>e',       ':Neotree reveal<CR>',                               description = 'Explorer',         mode = 'n' },
+				{ '<leader>e',       ':Neotree reveal<CR>',                               description = 'Explorer',                   mode = 'n' },
 
 				-- Exit all
-				{ '<leader>q',       ':qa<CR>',                                           description = 'Exit Nvim',        mode = 'n' },
+				{ '<leader>q',       ':qa<CR>',                                           description = 'Exit Nvim',                  mode = 'n' },
 
 				-- Format and Save file
-				{ '<leader>f',       function() vim.lsp.buf.format({ async = true }) end, description = 'Format File',      mode = 'n' },
-				{ '<leader>s',       ':w<CR>',                                            description = 'Save File',        mode = 'n' },
+				{ '<leader>f',       function() vim.lsp.buf.format({ async = true }) end, description = 'Format File',                mode = 'n' },
+				{ '<leader>s',       ':w<CR>',                                            description = 'Save File',                  mode = 'n' },
 
 				-- Redo
-				{ '<S-u>',           '<C-r>',                                             description = 'Redo',             mode = 'n' },
+				{ '<S-u>',           '<C-r>',                                             description = 'Redo',                       mode = 'n' },
 
 				-- Move around files
-				{ '<leader><Tab>',   ':tabnext<CR>',                                      description = 'Tab Next',         mode = 'n' },
-				{ '<leader><S-Tab>', ':tabprev<CR>',                                      description = 'Tab Prev',         mode = 'n' },
-				{ '<leader>t',       ':tabnew<CR>',                                       description = 'Tab New',          mode = 'n' },
-				{ '<leader>w',       ':tabclose<CR>',                                     description = 'Tab Close',        mode = 'n' },
+				{ '<leader><Tab>',   ':tabnext<CR>',                                      description = 'Tab Next',                   mode = 'n' },
+				{ '<leader><S-Tab>', ':tabprev<CR>',                                      description = 'Tab Prev',                   mode = 'n' },
+				{ '<leader>t',       ':tabnew<CR>',                                       description = 'Tab New',                    mode = 'n' },
+				{ '<leader>w',       ':tabclose<CR>',                                     description = 'Tab Close',                  mode = 'n' },
 
 				-- Git shortcut
-				{ '<leader>g',       '<cmd>Neogit<cr>',                                   description = 'Git',              mode = 'n' },
+				{ '<leader>g',       '<cmd>Neogit<cr>',                                   description = 'Git',                        mode = 'n' },
 
 				-- Select All
-				{ '<leader>a',       'ggVG',                                              description = 'Select All',       mode = 'n' },
+				{ '<leader>a',       'ggVG',                                              description = 'Select All',                 mode = 'n' },
 
 				-- LSP Shortcuts
-				{ '<leader>[',       '<cmd>lua vim.lsp.buf.definition()<CR>',             description = 'Go to definition', mode = 'n' },
+				{ '<leader>[',       '<cmd>lua vim.lsp.buf.definition()<CR>',             description = 'Go to definition',           mode = 'n' },
 				{
 					'<leader>]',
 					function()

@@ -6,7 +6,7 @@ return {
 	config = function()
 		-- Treesitter setup
 		require("nvim-treesitter.configs").setup({
-			ensure_installed = { "c", "go", "gomod", "lua", "vim", "vimdoc", "query", "javascript", "html", "sql", "rust" },
+			ensure_installed = { "c", "go", "gomod", "lua", "vim", "vimdoc", "query", "javascript", "html", "sql", "rust", "json" },
 			sync_install = false,
 			highlight = { enable = true },
 			indent = { enable = true },

@@ -10,4 +10,4 @@ vim.opt.shiftwidth = 2
 vim.opt.number = true
 
 -- Set leader key
-vim.g.mapleader = "\\"
+vim.g.mapleader = ' '

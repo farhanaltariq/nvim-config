@@ -17,7 +17,6 @@ return {
 				{ '',                json.format,                                         description = 'Format JSON',                group = 'JSON' },
 				{ '',                json.minify,                                         description = 'Minify JSON',                group = 'JSON' },
 				{ '',                json.convert_keys,                                   description = 'Convert Keys (toggle case)', group = 'JSON' },
-				{ '',                json.convert_keys,                                   description = 'Convert Keys (toggle case)', group = 'JSON' },
 
 				-- Explorer
 				{ '<leader>e',       ':Neotree reveal<CR>',                               description = 'Explorer',                   mode = 'n' },
@@ -90,8 +89,8 @@ return {
 				{ '<F12>',       function() require('dap').step_out() end,                                                     description = "Step Out",                                     mode = 'n' },
 				{ '<leader>b',   function() require('dap').toggle_breakpoint() end,                                            description = "Toggle Breakpoint",                            mode = 'n' },
 				{ '<leader>E',   function() require('dapui').eval() end,                                                       description = "Evaluate Expression",                          mode = { 'n', 'v' } },
-				{ '<leader>w',   function() require('dapui').elements.watches.add() end,                                       description = "Add Watch",                                    mode = 'n' },
-				{ '<leader>W',   function() require('dapui').elements.watches.remove() end,                                    description = "Remove Watch",                                 mode = 'n' },
+				{ '<leader>Ww',  function() require('dapui').elements.watches.add() end,                                       description = "Add Watch",                                    mode = 'n' },
+				{ '<leader>WW',  function() require('dapui').elements.watches.remove() end,                                    description = "Remove Watch",                                 mode = 'n' },
 				{ '<leader>XYZ', function() require('dapui').close() end,                                                      description = "DAP Close UI",                                 mode = 'n' },
 
 				-- Hop Keymaps

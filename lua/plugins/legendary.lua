@@ -13,6 +13,16 @@ return {
 
 		legendary.setup({
 			keymaps = {
+				-- Group: Text Case
+				{ "<leader>cu",      "<cmd>TextCaseOpenTelescope<CR>",                    mode = { "n", "v" },                        group = "Text Case",          description = "Open Case Picker" },
+				{ "<leader>cS",      "<cmd>TextCaseToSnakeCase<CR>",                      group = "Text Case",                        description = "To snake_case" },
+				{ "<leader>cK",      "<cmd>TextCaseToKebabCase<CR>",                      group = "Text Case",                        description = "To kebab-case" },
+				{ "<leader>cC",      "<cmd>TextCaseToCamelCase<CR>",                      group = "Text Case",                        description = "To camelCase" },
+				{ "<leader>cP",      "<cmd>TextCaseToPascalCase<CR>",                     group = "Text Case",                        description = "To PascalCase" },
+				{ "<leader>cT",      "<cmd>TextCaseToTitleCase<CR>",                      group = "Text Case",                        description = "To Title Case" },
+				{ "<leader>cU",      "<cmd>TextCaseToUpperCase<CR>",                      group = "Text Case",                        description = "To UPPER CASE" },
+				{ "<leader>cL",      "<cmd>TextCaseToLowerCase<CR>",                      group = "Text Case",                        description = "To lower case" },
+
 				-- Json formatter
 				{ '',                json.format,                                         description = 'Format JSON',                group = 'JSON' },
 				{ '',                json.minify,                                         description = 'Minify JSON',                group = 'JSON' },

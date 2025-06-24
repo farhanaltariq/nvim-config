@@ -50,6 +50,7 @@
   "telescope-themes": { "branch": "main", "commit": "9b7c368b83b82b53c0a6e9e977f8329e5f1fe269" },
   "telescope.nvim": { "branch": "master", "commit": "a0bbec21143c7bc5f8bb02e0005fa0b982edc026" },
   "tender.vim": { "branch": "master", "commit": "01c9bd723f2631971b2c8cda8f8ea037221d5149" },
+  "text-case.nvim": { "branch": "main", "commit": "e898cfd46fa6cde0e83abb624a16e67d2ffc6457" },
   "tiny-glimmer.nvim": { "branch": "main", "commit": "5db30587b4998bcedd69d31488be0046c97698aa" },
   "tiny-inline-diagnostic.nvim": { "branch": "main", "commit": "842983e91e0b8825f1084b8323c7806c8bf64c74" },
   "todo-comments.nvim": { "branch": "main", "commit": "304a8d204ee787d2544d8bc23cd38d2f929e7cc5" },

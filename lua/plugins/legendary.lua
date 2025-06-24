@@ -14,47 +14,51 @@ return {
 		legendary.setup({
 			keymaps = {
 				-- Group: Text Case
-				{ "<leader>cu",      "<cmd>TextCaseOpenTelescope<CR>",                    mode = { "n", "v" },                        group = "Text Case",          description = "Open Case Picker" },
-				{ "<leader>cS",      "<cmd>TextCaseToSnakeCase<CR>",                      group = "Text Case",                        description = "To snake_case" },
-				{ "<leader>cK",      "<cmd>TextCaseToKebabCase<CR>",                      group = "Text Case",                        description = "To kebab-case" },
-				{ "<leader>cC",      "<cmd>TextCaseToCamelCase<CR>",                      group = "Text Case",                        description = "To camelCase" },
-				{ "<leader>cP",      "<cmd>TextCaseToPascalCase<CR>",                     group = "Text Case",                        description = "To PascalCase" },
-				{ "<leader>cT",      "<cmd>TextCaseToTitleCase<CR>",                      group = "Text Case",                        description = "To Title Case" },
-				{ "<leader>cU",      "<cmd>TextCaseToUpperCase<CR>",                      group = "Text Case",                        description = "To UPPER CASE" },
-				{ "<leader>cL",      "<cmd>TextCaseToLowerCase<CR>",                      group = "Text Case",                        description = "To lower case" },
+				{ "gau", function() require("textcase").current_word("to_upper_case") end, description = "Word → UPPER_CASE", group = "Text Case" },
+				{ "gal", function() require("textcase").current_word("to_lower_case") end, description = "Word → lower_case", group = "Text Case" },
+				{ "gas", function() require("textcase").current_word("to_snake_case") end, description = "Word → snake_case", group = "Text Case" },
+				{ "gad", function() require("textcase").current_word("to_dash_case") end, description = "Word → dash-case", group = "Text Case" },
+				{ "gan", function() require("textcase").current_word("to_constant_case") end, description = "Word → CONSTANT_CASE", group = "Text Case" },
+				{ "ga.", function() require("textcase").current_word("to_dot_case") end, description = "Word → dot.case", group = "Text Case" },
+				{ "ga,", function() require("textcase").current_word("to_comma_case") end, description = "Word → comma,case", group = "Text Case" },
+				{ "gaa", function() require("textcase").current_word("to_phrase_case") end, description = "Word → phrase case", group = "Text Case" },
+				{ "gac", function() require("textcase").current_word("to_camel_case") end, description = "Word → camelCase", group = "Text Case" },
+				{ "gap", function() require("textcase").current_word("to_pascal_case") end, description = "Word → PascalCase", group = "Text Case" },
+				{ "gat", function() require("textcase").current_word("to_title_case") end, description = "Word → Title Case", group = "Text Case" },
+				{ "gaf", function() require("textcase").current_word("to_path_case") end, description = "Word → path/case", group = "Text Case" },
 
 				-- Json formatter
-				{ '',                json.format,                                         description = 'Format JSON',                group = 'JSON' },
-				{ '',                json.minify,                                         description = 'Minify JSON',                group = 'JSON' },
-				{ '',                json.convert_keys,                                   description = 'Convert Keys (toggle case)', group = 'JSON' },
+				{ '', json.format, description = 'Format JSON', group = 'JSON' },
+				{ '', json.minify, description = 'Minify JSON', group = 'JSON' },
+				{ '', json.convert_keys, description = 'Convert Keys (toggle case)', group = 'JSON' },
 
 				-- Explorer
-				{ '<leader>e',       ':Neotree reveal<CR>',                               description = 'Explorer',                   mode = 'n' },
+				{ '<leader>e', ':Neotree reveal<CR>', description = 'Explorer', mode = 'n' },
 
 				-- Exit all
-				{ '<leader>q',       ':qa<CR>',                                           description = 'Exit Nvim',                  mode = 'n' },
+				{ '<leader>q', ':qa<CR>', description = 'Exit Nvim', mode = 'n' },
 
 				-- Format and Save file
-				{ '<leader>f',       function() vim.lsp.buf.format({ async = true }) end, description = 'Format File',                mode = 'n' },
-				{ '<leader>s',       ':w<CR>',                                            description = 'Save File',                  mode = 'n' },
+				{ '<leader>f', function() vim.lsp.buf.format({ async = true }) end, description = 'Format File', mode = 'n' },
+				{ '<leader>s', ':w<CR>', description = 'Save File', mode = 'n' },
 
 				-- Redo
-				{ '<S-u>',           '<C-r>',                                             description = 'Redo',                       mode = 'n' },
+				{ '<S-u>', '<C-r>', description = 'Redo', mode = 'n' },
 
 				-- Move around files
-				{ '<leader><Tab>',   ':tabnext<CR>',                                      description = 'Tab Next',                   mode = 'n' },
-				{ '<leader><S-Tab>', ':tabprev<CR>',                                      description = 'Tab Prev',                   mode = 'n' },
-				{ '<leader>t',       ':tabnew<CR>',                                       description = 'Tab New',                    mode = 'n' },
-				{ '<leader>w',       ':tabclose<CR>',                                     description = 'Tab Close',                  mode = 'n' },
+				{ '<leader><Tab>', ':tabnext<CR>', description = 'Tab Next', mode = 'n' },
+				{ '<leader><S-Tab>', ':tabprev<CR>', description = 'Tab Prev', mode = 'n' },
+				{ '<leader>t', ':tabnew<CR>', description = 'Tab New', mode = 'n' },
+				{ '<leader>w', ':tabclose<CR>', description = 'Tab Close', mode = 'n' },
 
 				-- Git shortcut
-				{ '<leader>g',       '<cmd>Neogit<cr>',                                   description = 'Git',                        mode = 'n' },
+				{ '<leader>g', '<cmd>Neogit<cr>', description = 'Git', mode = 'n' },
 
 				-- Select All
-				{ '<leader>a',       'ggVG',                                              description = 'Select All',                 mode = 'n' },
+				{ '<leader>a', 'ggVG', description = 'Select All', mode = 'n' },
 
 				-- LSP Shortcuts
-				{ '<leader>[',       '<cmd>lua vim.lsp.buf.definition()<CR>',             description = 'Go to definition',           mode = 'n' },
+				{ '<leader>[', '<cmd>lua vim.lsp.buf.definition()<CR>', description = 'Go to definition', mode = 'n' },
 				{
 					'<leader>]',
 					function()

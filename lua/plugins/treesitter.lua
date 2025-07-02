@@ -13,7 +13,8 @@ return {
 		})
 		vim.wo.foldmethod = 'expr'
 		vim.wo.foldexpr = 'nvim_treesitter#foldexpr()'
-		-- Disable automatic folding when opening the buffer
-		vim.cmd('setlocal foldlevel=99') -- This will make sure folds are not collapsed on open
+		vim.o.foldlevel = 99
+		vim.o.foldlevelstart = 99
+		vim.o.foldenable = true
 	end
 }

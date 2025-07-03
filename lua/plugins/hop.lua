@@ -1,8 +1,10 @@
 return {
-	'phaazon/hop.nvim',
-	branch = 'v2', -- optional but strongly recommended
+	"phaazon/hop.nvim",
+	branch = "v2", -- if you're using v2
 	config = function()
-		-- you can configure Hop the way you like here; see :h hop-config
-		require("hop").setup()
-	end
+		local hop = require("hop")
+		hop.setup({
+			multi_windows = true, -- this makes hop work across splits
+		})
+	end,
 }
